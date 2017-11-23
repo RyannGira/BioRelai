@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="perrint_vlib@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="perrint_vlib">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="gsb_frais"/>
+    <schema id="4" parent="1" name="immobm"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="mysql"/>
+    <schema id="7" parent="1" name="performance_schema"/>
+    <schema id="8" parent="1" name="phpmyadmin"/>
+    <schema id="9" parent="1" name="sys"/>
+    <table id="10" parent="2" name="abonne"/>
+    <table id="11" parent="2" name="abonnement"/>
+    <table id="12" parent="2" name="etat_plot"/>
+    <table id="13" parent="2" name="etat_station"/>
+    <table id="14" parent="2" name="etat_velo"/>
+    <table id="15" parent="2" name="louer"/>
+    <table id="16" parent="2" name="plot"/>
+    <table id="17" parent="2" name="station"/>
+    <table id="18" parent="2" name="velo"/>
+    <column id="19" parent="10" name="CODEACCES">
+      <Position>1</Position>
+      <DataType>varchar(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="10" name="CODESECRET">
+      <Position>2</Position>
+      <DataType>int(4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="10" name="CODEA">
+      <Position>3</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="22" parent="10" name="NOM">
+      <Position>4</Position>
+      <DataType>char(32)|0</DataType>
+    </column>
+    <column id="23" parent="10" name="PRENOM">
+      <Position>5</Position>
+      <DataType>char(32)|0</DataType>
+    </column>
+    <column id="24" parent="10" name="DATEDEB_ABON">
+      <Position>6</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="25" parent="10" name="DATEFINABON">
+      <Position>7</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="26" parent="10" name="CREDITTEMPS">
+      <Position>8</Position>
+      <DataType>decimal(10,2)|0</DataType>
+    </column>
+    <column id="27" parent="10" name="MONTANTADEBITER">
+      <Position>9</Position>
+      <DataType>decimal(10,2)|0</DataType>
+    </column>
+    <index id="28" parent="10" name="I_FK_ABONNE_ABONNEMENT">
+      <ColNames>CODEA</ColNames>
+    </index>
+    <key id="29" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>CODEACCES
+CODESECRET</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="30" parent="10" name="FK_ABONNE_ABONNEMENT">
+      <ColNames>CODEA</ColNames>
+      <RefSchemaName>perrint_vlib</RefSchemaName>
+      <RefTableName>abonnement</RefTableName>
+      <RefColNames>CODEA</RefColNames>
+    </foreign-key>
+    <column id="31" parent="11" name="CODEA">
+      <Position>1</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="11" name="LIBELLEA">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="33" parent="11" name="DUREEA">
+      <Position>3</Position>
+      <DataType>int(3)|0</DataType>
+    </column>
+    <column id="34" parent="11" name="MONTANTA">
+      <Position>4</Position>
+      <DataType>decimal(10,2)|0</DataType>
+    </column>
+    <column id="35" parent="11" name="CREDITTEMPSBASE">
+      <Position>5</Position>
+      <DataType>decimal(10,2)|0</DataType>
+    </column>
+    <column id="36" parent="11" name="TARIFHORAIRE">
+      <Position>6</Position>
+      <DataType>decimal(3,2)|0</DataType>
+    </column>
+    <column id="37" parent="11" name="CAUTION">
+      <Position>7</Position>
+      <DataType>decimal(3,2)|0</DataType>
+    </column>
+    <column id="38" parent="11" name="TYPEA">
+      <Position>8</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <key id="39" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>CODEA</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="40" parent="12" name="HEURE">
+      <Position>1</Position>
+      <DataType>time|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="12" name="DATEM">
+      <Position>2</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="42" parent="12" name="NUMS">
+      <Position>3</Position>
+      <DataType>varchar(5)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="43" parent="12" name="NUM">
+      <Position>4</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="44" parent="12" name="ETATP">
+      <Position>5</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <column id="45" parent="12" name="DUREEINTERV">
+      <Position>6</Position>
+      <DataType>decimal(3,2)|0</DataType>
+    </column>
+    <index id="46" parent="12" name="I_FK_ETAT_PLOT_PLOT">
+      <ColNames>NUMS
+NUM</ColNames>
+    </index>
+    <key id="47" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>HEURE
+DATEM
+NUMS
+NUM</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="48" parent="12" name="FK_ETAT_PLOT_PLOT">
+      <ColNames>NUMS
+NUM</ColNames>
+      <RefSchemaName>perrint_vlib</RefSchemaName>
+      <RefTableName>plot</RefTableName>
+      <RefColNames>NUMS
+NUM</RefColNames>
+    </foreign-key>
+    <column id="49" parent="13" name="HEURE">
+      <Position>1</Position>
+      <DataType>time|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="13" name="DATEM">
+      <Position>2</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="13" name="NUMS">
+      <Position>3</Position>
+      <DataType>varchar(5)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="13" name="ETATS">
+      <Position>4</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <column id="53" parent="13" name="DUREEINTERV">
+      <Position>5</Position>
+      <DataType>decimal(3,2)|0</DataType>
+    </column>
+    <index id="54" parent="13" name="I_FK_ETAT_STATION_STATION">
+      <ColNames>NUMS</ColNames>
+    </index>
+    <key id="55" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>HEURE
+DATEM
+NUMS</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="56" parent="13" name="FK_ETAT_STATION_STATION">
+      <ColNames>NUMS</ColNames>
+      <RefSchemaName>perrint_vlib</RefSchemaName>
+      <RefTableName>station</RefTableName>
+      <RefColNames>NUMS</RefColNames>
+    </foreign-key>
+    <column id="57" parent="14" name="HEURE">
+      <Position>1</Position>
+      <DataType>time|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="58" parent="14" name="DATEM">
+      <Position>2</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="14" name="NUMV">
+      <Position>3</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="60" parent="14" name="ETATV">
+      <Position>4</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <column id="61" parent="14" name="DUREEINTERV">
+      <Position>5</Position>
+      <DataType>decimal(3,2)|0</DataType>
+    </column>
+    <index id="62" parent="14" name="I_FK_ETAT_VELO_VELO">
+      <ColNames>NUMV</ColNames>
+    </index>
+    <key id="63" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>HEURE
+DATEM
+NUMV</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="64" parent="14" name="FK_ETAT_VELO_VELO">
+      <ColNames>NUMV</ColNames>
+      <RefSchemaName>perrint_vlib</RefSchemaName>
+      <RefTableName>velo</RefTableName>
+      <RefColNames>NUMV</RefColNames>
+    </foreign-key>
+    <column id="65" parent="15" name="CODEACCES">
+      <Position>1</Position>
+      <DataType>varchar(8)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="66" parent="15" name="CODESECRET">
+      <Position>2</Position>
+      <DataType>int(4)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="67" parent="15" name="NUMV">
+      <Position>3</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="15" name="HEURE">
+      <Position>4</Position>
+      <DataType>time|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="15" name="DATEM">
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="70" parent="15" name="TEMPSLOC">
+      <Position>6</Position>
+      <DataType>decimal(5,2)|0</DataType>
+    </column>
+    <index id="71" parent="15" name="I_FK_LOUER_ABONNE">
+      <ColNames>CODEACCES
+CODESECRET</ColNames>
+    </index>
+    <index id="72" parent="15" name="I_FK_LOUER_VELO">
+      <ColNames>NUMV</ColNames>
+    </index>
+    <key id="73" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>CODEACCES
+CODESECRET
+NUMV
+HEURE
+DATEM</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="74" parent="15" name="FK_LOUER_ABONNE">
+      <ColNames>CODEACCES
+CODESECRET</ColNames>
+      <RefSchemaName>perrint_vlib</RefSchemaName>
+      <RefTableName>abonne</RefTableName>
+      <RefColNames>CODEACCES
+CODESECRET</RefColNames>
+    </foreign-key>
+    <foreign-key id="75" parent="15" name="FK_LOUER_VELO">
+      <ColNames>NUMV</ColNames>
+      <RefSchemaName>perrint_vlib</RefSchemaName>
+      <RefTableName>velo</RefTableName>
+      <RefColNames>NUMV</RefColNames>
+    </foreign-key>
+    <column id="76" parent="16" name="NUMS">
+      <Position>1</Position>
+      <DataType>varchar(5)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="77" parent="16" name="NUM">
+      <Position>2</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="78" parent="16" name="NUMV">
+      <Position>3</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="79" parent="16" name="ETAT">
+      <Position>4</Position>
+      <DataType>varchar(2)|0</DataType>
+    </column>
+    <index id="80" parent="16" name="I_FK_PLOT_STATION">
+      <ColNames>NUMS</ColNames>
+    </index>
+    <index id="81" parent="16" name="I_FK_PLOT_VELO">
+      <ColNames>NUMV</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="82" parent="16" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>NUMS
+NUM</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="83" parent="16" name="I_FK_PLOT_VELO">
+      <ColNames>NUMV</ColNames>
+      <UnderlyingIndexName>I_FK_PLOT_VELO</UnderlyingIndexName>
+    </key>
+    <foreign-key id="84" parent="16" name="FK_PLOT_STATION">
+      <ColNames>NUMS</ColNames>
+      <RefSchemaName>perrint_vlib</RefSchemaName>
+      <RefTableName>station</RefTableName>
+      <RefColNames>NUMS</RefColNames>
+    </foreign-key>
+    <foreign-key id="85" parent="16" name="FK_PLOT_VELO">
+      <ColNames>NUMV</ColNames>
+      <RefSchemaName>perrint_vlib</RefSchemaName>
+      <RefTableName>velo</RefTableName>
+      <RefColNames>NUMV</RefColNames>
+    </foreign-key>
+    <column id="86" parent="17" name="NUMS">
+      <Position>1</Position>
+      <DataType>varchar(5)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="87" parent="17" name="ETATS">
+      <Position>2</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <column id="88" parent="17" name="NOMS">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="89" parent="17" name="SITUATIONS">
+      <Position>4</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <column id="90" parent="17" name="CAPACITES">
+      <Position>5</Position>
+      <DataType>int(2)|0</DataType>
+    </column>
+    <column id="91" parent="17" name="NUMBORNE">
+      <Position>6</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <key id="92" parent="17" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>NUMS</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="93" parent="18" name="NUMV">
+      <Position>1</Position>
+      <DataType>varchar(10)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="94" parent="18" name="NUMS">
+      <Position>2</Position>
+      <DataType>varchar(5)|0</DataType>
+    </column>
+    <column id="95" parent="18" name="NUM">
+      <Position>3</Position>
+      <DataType>varchar(10)|0</DataType>
+    </column>
+    <column id="96" parent="18" name="ETATV">
+      <Position>4</Position>
+      <DataType>varchar(15)|0</DataType>
+    </column>
+    <column id="97" parent="18" name="DMEC">
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <index id="98" parent="18" name="I_FK_VELO_PLOT">
+      <ColNames>NUMS
+NUM</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="99" parent="18" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>NUMV</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="100" parent="18" name="I_FK_VELO_PLOT">
+      <ColNames>NUMS
+NUM</ColNames>
+      <UnderlyingIndexName>I_FK_VELO_PLOT</UnderlyingIndexName>
+    </key>
+    <foreign-key id="101" parent="18" name="FK_VELO_PLOT">
+      <ColNames>NUMS
+NUM</ColNames>
+      <RefSchemaName>perrint_vlib</RefSchemaName>
+      <RefTableName>plot</RefTableName>
+      <RefColNames>NUMS
+NUM</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
