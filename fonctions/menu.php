@@ -30,7 +30,7 @@ class Menu{
 	 * Crée un nouvelle item pour le menu
 	 * @param $unLien  (valeur transmise)
 	 * @param $uneValeur (valeur affichée)
-	 * @return un item pour le menu
+	 * return un item pour le menu
 	 */
 	public function creerItemLien($unLien,$uneValeur){
 		$composant = array();
