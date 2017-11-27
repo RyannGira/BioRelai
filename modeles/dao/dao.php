@@ -68,3 +68,43 @@ class DBConnex extends PDO{
     }
 }
 
+Class AdherentDAO{
+    /*
+     creation des requetes suivante nécessaire :
+     - insertion d'un nouvel adherent
+     - modification des donnée d'un adherent
+     - suppression d'un adherent
+     récupéré md5 afin d'enregistrer le code choisi
+     par l'adherent de façon crypté
+     */
+    public static function verification(adherent $adherent){
+        $sql = "select mail from adherent where mail = '" . $adherent->getMail() . "' and  password =  '" . $_POST['mdp'] ."'";
+        $login = DBConnex::getInstance()->queryFetchFirstRow($sql);
+        if(empty($login)){
+            return null;
+        }
+        return $login[0];
+    }
+    
+}
+
+
+Class ProducteurDAO{
+    /*
+     creation des requetes suivante nécessaire :
+     - insertion d'un nouveau producteur
+     - modification des donnée d'un producteur
+     - suppression d'un producteur
+     récupéré md5 afin d'enregistrer le code choisi
+     par l'adherent de façon crypté
+     */
+    public static function verification(producteur $producteur){
+        $sql = "select mail from producteur where mail = '" . $producteur->getMail() . "' and  password =  '" . $_POST['mdp'] ."'";
+        $login = DBConnex::getInstance()->queryFetchFirstRow($sql);
+        if(empty($login)){
+            return null;
+        }
+        return $login[0];
+    }
+    
+}
