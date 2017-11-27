@@ -20,26 +20,34 @@ else{
     }
 }
 
-// *****verifie si le login et le mdp inséré correspond a un abonné existant
-// dans la bas de donnee, si il existe, il se connecte et est redirigé a l'accueil
+// *****verifie si le login et le mdp inséré correspond a une personne existant
+// dans la base de donnee, si il existe, il se connecte et est redirigé a l'accueil
 // sinon son mdp ou login est incorrect et reste sur la page******
 $messageErreurConnexion= '';
 if (isset($_POST['login'],$_POST['mdp'])){
-    $unAdherent =new adherent($_POST['login']);
-    $_SESSION['identification']=adherentDAO::verification($unAdherent);
-
-    if($_SESSION['identification']){
+    $unResponsable =new responsable($_POST['login']);
+    $_SESSION['identificationResp']=responsableDAO::verification($unResponsable);
+    
+    if($_SESSION['identificationResp']){
         $_SESSION['bioRelaiMP']='accueil';
     }
     else{
-        $unProducteur =new producteur($_POST['login']);
-        $_SESSION['identificationProd']=producteurDAO::verification($unAdherent);
-        
-        if($_SESSION['identificationProd']){
+        $unAdherent =new adherent($_POST['login']);
+        $_SESSION['identificationAdhe']=adherentDAO::verification($unAdherent);
+    
+        if($_SESSION['identificationAdhe']){
             $_SESSION['bioRelaiMP']='accueil';
         }
         else{
-        $messageErreurConnexion='Login ou mot de passe incorrect';
+            $unProducteur =new producteur($_POST['login']);
+            $_SESSION['identificationProd']=producteurDAO::verification($unAdherent);
+            
+            if($_SESSION['identificationProd']){
+                $_SESSION['bioRelaiMP']='accueil';
+            }
+            else{
+            $messageErreurConnexion='Login ou mot de passe incorrect';
+            }
         }
     }
 }
@@ -50,9 +58,9 @@ $bioRelaiMP = new Menu("menuPrincipal");
 
 $bioRelaiMP->ajouterComposant($bioRelaiMP->creerItemLien("accueil", "Accueil"));
 
-//********* verifie si l'abonne est connecté
-// il affiche des onglets supplémentaire concernant l'abonne**********
-if (isset($_SESSION['identification'])){
+//********* verifie qui est connecté
+// il affiche des onglets supplémentaire concernant la personne connect�e**********
+if (isset($_SESSION['identificationAdhe'])){
     $bioRelaiMP->ajouterComposant($bioRelaiMP->creerItemLien("MonCompteAdherent", "Mon compte"));
     $bioRelaiMP->ajouterComposant($bioRelaiMP->creerItemLien("deconnexion", "Se deconnecter"));
 }
