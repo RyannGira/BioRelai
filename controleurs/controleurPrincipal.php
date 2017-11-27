@@ -60,19 +60,24 @@ $bioRelaiMP->ajouterComposant($bioRelaiMP->creerItemLien("accueil", "Accueil"));
 
 //********* verifie qui est connecté
 // il affiche des onglets supplémentaire concernant la personne connect�e**********
-if (isset($_SESSION['identificationAdhe'])){
-    $bioRelaiMP->ajouterComposant($bioRelaiMP->creerItemLien("MonCompteAdherent", "Mon compte"));
+if (isset($_SESSION['identificationResp'])){
+    $bioRelaiMP->ajouterComposant($bioRelaiMP->creerItemLien("MonCompteResponsable", "Mon compte"));
     $bioRelaiMP->ajouterComposant($bioRelaiMP->creerItemLien("deconnexion", "Se deconnecter"));
 }
 else {
-    if (isset($_SESSION['identificationProd'])){
-        $bioRelaiMP->ajouterComposant($bioRelaiMP->creerItemLien("MonCompteProducteur", "Mon compte"));
+    if (isset($_SESSION['identificationAdhe'])){
+        $bioRelaiMP->ajouterComposant($bioRelaiMP->creerItemLien("MonCompteAdherent", "Mon compte"));
         $bioRelaiMP->ajouterComposant($bioRelaiMP->creerItemLien("deconnexion", "Se deconnecter"));
     }
-    else{
-        $bioRelaiMP->ajouterComposant($bioRelaiMP->creerItemLien("connexion", "Se connecter"));
+    else {
+        if (isset($_SESSION['identificationProd'])){
+            $bioRelaiMP->ajouterComposant($bioRelaiMP->creerItemLien("MonCompteProducteur", "Mon compte"));
+            $bioRelaiMP->ajouterComposant($bioRelaiMP->creerItemLien("deconnexion", "Se deconnecter"));
+        }
+        else{
+            $bioRelaiMP->ajouterComposant($bioRelaiMP->creerItemLien("connexion", "Se connecter"));
+        }
     }
-  
 }
 //*********** crée le menu principal
 $menuPrincipal = $bioRelaiMP->creerMenu($_SESSION['bioRelaiMP'],'bioRelaiMP');
