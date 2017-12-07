@@ -1,9 +1,9 @@
 <?php
 $menuAdherent = new Menu("menuSecondaire");
 
+$menuAdherent->ajouterComposant($bioRelaiMP->creerItemLien("MonCompteResponsable", "Mon compte"));
 
-
-$menuSecondaire = $bioRelaiAdherent->creerMenu($_SESSION['bioRelaiMP'],'bioRelaiAdherent');
+$menuSecondaire = $menuAdherent->creerMenu($_SESSION['bioRelaiMP'],'menuAdherent');
 
 include_once 'vues/MonCompteAdherent.php';
 ?>
