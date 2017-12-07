@@ -207,6 +207,62 @@ nav.menuPrincipal ul li .actif {
 /****************************************************/
 
 
+/*styles pour le menu secondaire                    */
+
+
+/****************************************************/
+
+nav.menuSecondaire {
+    background-color: #b3b3b3;
+    font-size: 0px;
+    text-align: right;
+    height: 50px;
+    padding: 0px;
+    margin: 0px;
+}
+
+nav.menuSecondaire ul {
+    display: inline-block;
+    list-style: none;
+}
+
+nav.menuSecondaire ul li {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Helvetica;
+}
+
+nav.menuSecondaire ul li a {
+    display: table-cell;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    height: 50px;
+    width: 140px;
+    -webkit-transition-duration: 0.3s ;
+}
+
+nav.menuSecondaire ul li a:hover {
+    color: grey;
+    -webkit-transition-duration: 0.3s ;
+}
+
+nav.menuSecondaire ul li .actif {
+    display: table-cell;
+    background-color: ivory;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+    height: 50px;
+    width: 140px;
+}
+
+
+/****************************************************/
+
+
 /*styles pour le page d'accueil                     */
 
 

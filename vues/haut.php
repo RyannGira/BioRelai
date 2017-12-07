@@ -5,7 +5,7 @@
 <div class='bandeau'>
 	<div class="logo">
         <a href="index.php?bioRelaiMP=accueil">
-        <img src="images/bioRelai.ico">
+        <img src="images/bioRelai.jpg">
         </a>
     </div>
     <div class="bienvenue">
