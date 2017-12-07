@@ -5,6 +5,7 @@ require_once 'fonctions/formulaire.php';
 require_once 'fonctions/dispatcher.php';
 require_once 'modeles/dto/adherent.php';
 require_once 'modeles/dto/producteur.php';
+require_once 'modeles/dto/responsable.php';
 require_once 'modeles/dao/dao.php';
 require_once 'fonctions/fonctions.php';
 
