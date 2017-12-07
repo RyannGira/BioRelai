@@ -5,10 +5,10 @@ session_start()?>
 <html lang="fr">
 	<head>
 		<meta charset="utf-8" />
-		<title>Vlib</title>
-        <link rel="icon" href="images/icon-vlib.ico">
+		<title>Bio-Relai</title>
+        <link rel="icon" href="images/search-icon.png">
 		<style type="text/css">
-			@import url(styles/vlib.css);
+			@import url(styles/BioRelai.css);
 		</style>
 	</head>
 	<body>
