@@ -1,8 +1,6 @@
 <?php
 //D�finition des variables de connexion
 class Param {
-	// si la connexion ne fonctionne pas, c'est normal, j'ai pull mes params sans faire expres
-	// et je taff sur mac os......................
 	public static $user = 'root';
 	// mettre $pass=''
   public static $pass = 'root';
