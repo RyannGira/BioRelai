@@ -4,8 +4,12 @@ require_once 'fonctions/menu.php';
 require_once 'fonctions/formulaire.php';
 require_once 'fonctions/dispatcher.php';
 require_once 'modeles/dto/adherent.php';
+require_once 'modeles/dto/producteur.php';
+require_once 'modeles/dto/responsable.php';
 require_once 'modeles/dao/dao.php';
 require_once 'fonctions/fonctions.php';
+
+
 
 
 
@@ -59,7 +63,7 @@ $bioRelaiMP = new Menu("menuPrincipal");
 $bioRelaiMP->ajouterComposant($bioRelaiMP->creerItemLien("accueil", "Accueil"));
 
 //********* verifie qui est connecté
-// il affiche des onglets supplémentaire concernant la personne connect�e**********
+// il affiche des onglets supplémentaire concernant la personne connect�e**********
 if (isset($_SESSION['identificationResp'])){
     $bioRelaiMP->ajouterComposant($bioRelaiMP->creerItemLien("MonCompteResponsable", "Mon compte"));
     $bioRelaiMP->ajouterComposant($bioRelaiMP->creerItemLien("deconnexion", "Se deconnecter"));
